@@ -16,6 +16,8 @@
 		50C37F541F7C058D005D9A24 /* Bitcoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C37F531F7C058D005D9A24 /* Bitcoin.swift */; };
 		50C37F581F7C07A7005D9A24 /* ExchangeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C37F571F7C07A7005D9A24 /* ExchangeVC.swift */; };
 		50C37F591F7C07A7005D9A24 /* ExchangeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C37F571F7C07A7005D9A24 /* ExchangeVC.swift */; };
+		50C37F5B1F7C475C005D9A24 /* Variables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C37F5A1F7C475C005D9A24 /* Variables.swift */; };
+		50C37F5D1F7C47EA005D9A24 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C37F5C1F7C47EA005D9A24 /* Functions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +43,8 @@
 		50C37F461F7C04C4005D9A24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50C37F531F7C058D005D9A24 /* Bitcoin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bitcoin.swift; sourceTree = "<group>"; };
 		50C37F571F7C07A7005D9A24 /* ExchangeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExchangeVC.swift; sourceTree = "<group>"; };
+		50C37F5A1F7C475C005D9A24 /* Variables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Variables.swift; sourceTree = "<group>"; };
+		50C37F5C1F7C47EA005D9A24 /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +108,8 @@
 			children = (
 				50C37F331F7C04C3005D9A24 /* Bitcoin_.xcdatamodeld */,
 				50C37F531F7C058D005D9A24 /* Bitcoin.swift */,
+				50C37F5A1F7C475C005D9A24 /* Variables.swift */,
+				50C37F5C1F7C47EA005D9A24 /* Functions.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -244,6 +250,8 @@
 				50C37F351F7C04C3005D9A24 /* Bitcoin_.xcdatamodeld in Sources */,
 				50C37F2D1F7C04C3005D9A24 /* AppDelegate.swift in Sources */,
 				50C37F581F7C07A7005D9A24 /* ExchangeVC.swift in Sources */,
+				50C37F5B1F7C475C005D9A24 /* Variables.swift in Sources */,
+				50C37F5D1F7C47EA005D9A24 /* Functions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,6 +464,7 @@
 				50C37F4B1F7C04C4005D9A24 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		50C37F4C1F7C04C4005D9A24 /* Build configuration list for PBXNativeTarget "Bitcoin+Tests" */ = {
 			isa = XCConfigurationList;
@@ -464,6 +473,7 @@
 				50C37F4E1F7C04C4005D9A24 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

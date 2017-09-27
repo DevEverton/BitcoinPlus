@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ArF-2f-3ve">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -19,73 +18,99 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Vi-it-U92">
-                                <rect key="frame" x="162.5" y="149" width="50" height="50"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Utm-8o-mxv">
+                                <rect key="frame" x="52" y="129" width="310" height="100"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bitcoin" translatesAutoresizingMaskIntoConstraints="NO" id="eZq-it-1YX">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="hmV-J1-5Qg"/>
+                                            <constraint firstAttribute="height" constant="100" id="mj7-3v-hJi"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Vi-it-U92">
+                                        <rect key="frame" x="130" y="25" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="Iw1-it-8Ek"/>
+                                            <constraint firstAttribute="height" constant="50" id="Uw2-hd-AcA"/>
+                                        </constraints>
+                                        <state key="normal" image="exchange"/>
+                                        <connections>
+                                            <action selector="changeSidesButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RzO-uI-sid"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vI4-lh-LLE">
+                                        <rect key="frame" x="210" y="0.0" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="Cdn-zc-KWH"/>
+                                            <constraint firstAttribute="width" constant="100" id="jgK-yk-edL"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="110"/>
+                                        <state key="normal" title="$">
+                                            <color key="titleColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="oYs-Iz-73D">
+                                <rect key="frame" x="133.33333333333331" y="289" width="149.33333333333331" height="51"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="฿" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dX5-VV-Dqb">
+                                        <rect key="frame" x="0.0" y="0.0" width="31" height="51"/>
+                                        <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="45"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0,00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ar-PQ-9Yc">
+                                        <rect key="frame" x="41" y="0.0" width="108.33333333333334" height="51"/>
+                                        <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="45"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="0r8-NI-cDn"/>
-                                    <constraint firstAttribute="height" constant="50" id="aec-mf-SLq"/>
+                                    <constraint firstAttribute="height" constant="51" id="JUt-WG-baI"/>
                                 </constraints>
-                                <state key="normal" image="exchange"/>
-                                <connections>
-                                    <action selector="changeSidesButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RzO-uI-sid"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bitcoin" translatesAutoresizingMaskIntoConstraints="NO" id="eZq-it-1YX">
-                                <rect key="frame" x="30" y="129" width="100" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="THy-16-S8S"/>
-                                    <constraint firstAttribute="width" constant="100" id="Ta6-xf-pLX"/>
-                                </constraints>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vI4-lh-LLE">
-                                <rect key="frame" x="245" y="129" width="130" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="130" id="0PF-KP-Mxn"/>
-                                    <constraint firstAttribute="height" constant="100" id="nkd-uT-mZU"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="98"/>
-                                <state key="normal" title="$">
-                                    <color key="titleColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                            </button>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="eZq-it-1YX" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="65" id="2Lt-Bi-HQC"/>
-                            <constraint firstItem="eZq-it-1YX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="14" id="7CG-PK-vSr"/>
-                            <constraint firstItem="7Vi-it-U92" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="85" id="9nR-Dd-NVL"/>
-                            <constraint firstItem="vI4-lh-LLE" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="65" id="QtN-ea-Pdm"/>
-                            <constraint firstItem="7Vi-it-U92" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VwI-s5-YWH"/>
-                            <constraint firstAttribute="trailing" secondItem="vI4-lh-LLE" secondAttribute="trailing" id="cIn-sX-GIa"/>
+                            <constraint firstItem="oYs-Iz-73D" firstAttribute="top" secondItem="Utm-8o-mxv" secondAttribute="bottom" constant="60" id="DTe-DE-jTr"/>
+                            <constraint firstItem="oYs-Iz-73D" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Lae-6Y-19Y"/>
+                            <constraint firstItem="Utm-8o-mxv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WYy-by-GhW"/>
+                            <constraint firstItem="Utm-8o-mxv" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="65" id="xEs-vT-dxU"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Exchange" id="XHA-7U-zB6"/>
                     <connections>
+                        <outlet property="amountLabel" destination="9ar-PQ-9Yc" id="bps-ML-fsb"/>
                         <outlet property="bitcoinSymbol" destination="eZq-it-1YX" id="ozH-tU-Utf"/>
                         <outlet property="changeSidesButton" destination="7Vi-it-U92" id="jUS-lo-q4e"/>
                         <outlet property="currencyButton" destination="vI4-lh-LLE" id="1QN-2f-aoM"/>
+                        <outlet property="symbolLabel" destination="dX5-VV-Dqb" id="7yH-gg-ifk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="709.60000000000002" y="126.38680659670166"/>
+            <point key="canvasLocation" x="708.69565217391312" y="126.35869565217392"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="B1h-13-Iqc">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U6b-0y-dIU" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ArF-2f-3ve" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" opaque="NO" contentMode="scaleToFill" id="b32-wD-ryp">
+                    <navigationBar key="navigationBar" opaque="NO" contentMode="scaleToFill" misplaced="YES" id="b32-wD-ryp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="tintColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="barTintColor" red="0.97254901960784312" green="0.78823529411764703" blue="0.25098039215686274" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -93,7 +118,6 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="BCS-fX-vgA"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="U6b-0y-dIU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-18.399999999999999" y="127.28635682158921"/>
         </scene>
