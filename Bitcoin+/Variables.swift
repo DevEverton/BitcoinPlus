@@ -12,6 +12,7 @@ import Foundation
 struct Variables {
     
     static var typedValue = String()
+    static var currentCurrency = String()
     
     
 }

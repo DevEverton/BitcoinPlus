@@ -14,7 +14,7 @@ struct Functions {
     static func formatToCurrency(symbol: String, number: String) -> String {
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = NumberFormatter.Style.currency
-        numberFormatter.currencySymbol = symbol + " "
+        numberFormatter.currencySymbol = symbol
         if let number2 = Double(number){
             return numberFormatter.string(from: NSNumber(value: number2))!
         }
@@ -28,6 +28,11 @@ struct Functions {
         return valueDbl
     }
     
+    static func performUIUpdatesOnMain(_ updates: @escaping () -> Void) {
+        DispatchQueue.main.async {
+            updates()
+        }
+    }
     
 }
 

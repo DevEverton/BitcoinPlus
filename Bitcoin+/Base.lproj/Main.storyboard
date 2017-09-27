@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ArF-2f-3ve">
-    <device id="retina5_5" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,11 +19,11 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Utm-8o-mxv">
-                                <rect key="frame" x="52" y="129" width="310" height="100"/>
+                                <rect key="frame" x="32.5" y="129" width="310" height="100"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bitcoin" translatesAutoresizingMaskIntoConstraints="NO" id="eZq-it-1YX">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -56,7 +57,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="oYs-Iz-73D">
-                                <rect key="frame" x="133.33333333333331" y="289" width="149.33333333333331" height="51"/>
+                                <rect key="frame" x="113" y="289" width="149.5" height="51"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="฿" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dX5-VV-Dqb">
                                         <rect key="frame" x="0.0" y="0.0" width="31" height="51"/>
@@ -65,7 +66,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0,00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ar-PQ-9Yc">
-                                        <rect key="frame" x="41" y="0.0" width="108.33333333333334" height="51"/>
+                                        <rect key="frame" x="41" y="0.0" width="108.5" height="51"/>
                                         <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="45"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -75,11 +76,50 @@
                                     <constraint firstAttribute="height" constant="51" id="JUt-WG-baI"/>
                                 </constraints>
                             </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UTE-7e-Fsi">
+                                <rect key="frame" x="0.0" y="407" width="375" height="260"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="Sb5-x3-Ooy" customClass="ResultsCell" customModule="Bitcoin_" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Sb5-x3-Ooy" id="sp4-nd-4Ce">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 0,00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vTo-Ac-Iqc">
+                                                    <rect key="frame" x="18" y="13" width="339" height="17.5"/>
+                                                    <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="vTo-Ac-Iqc" firstAttribute="top" secondItem="sp4-nd-4Ce" secondAttribute="topMargin" constant="5" id="5Gs-Ce-Y4A"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="vTo-Ac-Iqc" secondAttribute="bottom" constant="5" id="JRZ-H8-aYt"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="vTo-Ac-Iqc" secondAttribute="trailing" constant="10" id="XlX-XB-Iih"/>
+                                                <constraint firstItem="vTo-Ac-Iqc" firstAttribute="leading" secondItem="sp4-nd-4Ce" secondAttribute="leadingMargin" constant="10" id="n4E-as-ILv"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="valueLabel" destination="vTo-Ac-Iqc" id="U75-gt-Z7l"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="rom-W9-HKX"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="pat-F0-jUi"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="UTE-7e-Fsi" firstAttribute="top" secondItem="oYs-Iz-73D" secondAttribute="bottom" constant="67" id="1he-2U-nn5"/>
+                            <constraint firstItem="UTE-7e-Fsi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="44c-Eu-TAU"/>
                             <constraint firstItem="oYs-Iz-73D" firstAttribute="top" secondItem="Utm-8o-mxv" secondAttribute="bottom" constant="60" id="DTe-DE-jTr"/>
                             <constraint firstItem="oYs-Iz-73D" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Lae-6Y-19Y"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="UTE-7e-Fsi" secondAttribute="bottom" id="ST1-Bg-s4k"/>
+                            <constraint firstAttribute="trailing" secondItem="UTE-7e-Fsi" secondAttribute="trailing" id="VOD-RO-h3w"/>
                             <constraint firstItem="Utm-8o-mxv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WYy-by-GhW"/>
                             <constraint firstItem="Utm-8o-mxv" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="65" id="xEs-vT-dxU"/>
                         </constraints>
@@ -91,11 +131,12 @@
                         <outlet property="changeSidesButton" destination="7Vi-it-U92" id="jUS-lo-q4e"/>
                         <outlet property="currencyButton" destination="vI4-lh-LLE" id="1QN-2f-aoM"/>
                         <outlet property="symbolLabel" destination="dX5-VV-Dqb" id="7yH-gg-ifk"/>
+                        <outlet property="tableView" destination="UTE-7e-Fsi" id="Nw0-wn-TWX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="708.69565217391312" y="126.35869565217392"/>
+            <point key="canvasLocation" x="708" y="125.4872563718141"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="B1h-13-Iqc">
@@ -103,7 +144,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U6b-0y-dIU" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ArF-2f-3ve" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" opaque="NO" contentMode="scaleToFill" misplaced="YES" id="b32-wD-ryp">
+                    <navigationBar key="navigationBar" opaque="NO" contentMode="scaleToFill" id="b32-wD-ryp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
