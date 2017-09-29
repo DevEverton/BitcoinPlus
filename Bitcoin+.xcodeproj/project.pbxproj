@@ -19,6 +19,8 @@
 		50C37F5B1F7C475C005D9A24 /* Variables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C37F5A1F7C475C005D9A24 /* Variables.swift */; };
 		50C37F5D1F7C47EA005D9A24 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C37F5C1F7C47EA005D9A24 /* Functions.swift */; };
 		50C37F5F1F7C53EA005D9A24 /* ResultsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C37F5E1F7C53EA005D9A24 /* ResultsCell.swift */; };
+		50C37F631F7ED052005D9A24 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C37F621F7ED052005D9A24 /* RoundedView.swift */; };
+		50C37F651F7ED08F005D9A24 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C37F641F7ED08F005D9A24 /* RoundedButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		50C37F5A1F7C475C005D9A24 /* Variables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Variables.swift; sourceTree = "<group>"; };
 		50C37F5C1F7C47EA005D9A24 /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		50C37F5E1F7C53EA005D9A24 /* ResultsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsCell.swift; sourceTree = "<group>"; };
+		50C37F621F7ED052005D9A24 /* RoundedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
+		50C37F641F7ED08F005D9A24 /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +125,8 @@
 			children = (
 				50C37F301F7C04C3005D9A24 /* Main.storyboard */,
 				50C37F381F7C04C3005D9A24 /* LaunchScreen.storyboard */,
+				50C37F621F7ED052005D9A24 /* RoundedView.swift */,
+				50C37F641F7ED08F005D9A24 /* RoundedButton.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -249,9 +255,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50C37F631F7ED052005D9A24 /* RoundedView.swift in Sources */,
 				50C37F541F7C058D005D9A24 /* Bitcoin.swift in Sources */,
 				50C37F351F7C04C3005D9A24 /* Bitcoin_.xcdatamodeld in Sources */,
 				50C37F2D1F7C04C3005D9A24 /* AppDelegate.swift in Sources */,
+				50C37F651F7ED08F005D9A24 /* RoundedButton.swift in Sources */,
 				50C37F5F1F7C53EA005D9A24 /* ResultsCell.swift in Sources */,
 				50C37F581F7C07A7005D9A24 /* ExchangeVC.swift in Sources */,
 				50C37F5B1F7C475C005D9A24 /* Variables.swift in Sources */,

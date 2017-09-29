@@ -8,21 +8,21 @@
 
 import UIKit
 
-class ExchangeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ExchangeVC: UIViewController {
     
     @IBOutlet weak var changeSidesButton: UIButton!
     @IBOutlet weak var bitcoinSymbol: UIImageView!
-    @IBOutlet weak var currencyButton: UIButton!
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var currencyFromLabel: UILabel!
-    @IBOutlet weak var currencyToLabel: UILabel!
-    @IBOutlet weak var amountFromLabel: UILabel!
-    @IBOutlet weak var amountToLabel: UILabel!
+    @IBOutlet weak var currencySymbol: UILabel!
+    @IBOutlet weak var currencyChange: UILabel!
+    @IBOutlet weak var lastLabel: UILabel!
+    @IBOutlet weak var buyLabel: UILabel!
+    @IBOutlet weak var sellLabel: UILabel!
+
     
     
     
     var bitcoinSymbolLocation: CGPoint!
-    var currencyButtonLocation: CGPoint!
+    var currencySymbolLocation: CGPoint!
     
     var bitcoinData = [Bitcoin]()
     
@@ -37,39 +37,37 @@ class ExchangeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         self.navigationItem.titleView = UIImageView(image: UIImage(named: "bitcoinIcon"))
         //self.amountTextField.font = UIFont(name: "Courier New", size: 45)
         bitcoinSymbolLocation = bitcoinSymbol.center
-        currencyButtonLocation = currencyButton.center
+        currencySymbolLocation = currencySymbol.center
         getData()
-        amountFromLabel.text = "1,00"
-        amountToLabel.text = "4.150,45"
+
 
 
     }
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
+//    func numberOfSections(in tableView: UITableView) -> Int {
+//        return bitcoinData.count
+//    }
+//    
 //    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        let sections = ["Last", "Buy", "Sell"]
+//        return "Last"
+//    }
+//    
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return 1
+//    }
+//    
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 //        
-//        return sections[0]
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ResultsCell
+// 
+//        let bitcoinObject = bitcoinData[indexPath.section]
+//        cell.valueLabel.text = "Last: " + Functions.formatToCurrency(symbol: bitcoinObject.symbol, number: String(bitcoinObject.last))
+//        
+//        return cell
+//        
 //    }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return bitcoinData.count
-    }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ResultsCell
- 
-        let bitcoinObject = bitcoinData[indexPath.row]
-        
-        cell.valueLabel.text = "Last: " + Functions.formatToCurrency(symbol: bitcoinObject.symbol, number: String(bitcoinObject.last))
-        
-        return cell
-        
-    }
     
     func getData() {
         
@@ -77,8 +75,11 @@ class ExchangeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             if let bitcoinResults = results {
                 self.bitcoinData = bitcoinResults
                 Functions.performUIUpdatesOnMain {
-                    self.tableView.reloadData()
-
+                  //  self.tableView.reloadData()
+                    let bitcoinObject = self.bitcoinData[0]
+                    self.lastLabel.text = Functions.formatToCurrency(symbol: bitcoinObject.symbol, number: String(bitcoinObject.last))
+                    self.buyLabel.text = Functions.formatToCurrency(symbol: bitcoinObject.symbol, number: String(bitcoinObject.buy))
+                    self.sellLabel.text = Functions.formatToCurrency(symbol: bitcoinObject.symbol, number: String(bitcoinObject.sell))
                 }
             }
         }
@@ -88,18 +89,21 @@ class ExchangeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBAction func changeSidesButton(_ sender: Any) {
         UIView.animate(withDuration: 0.3) {
             if self.bitcoinSymbolLocation == self.bitcoinSymbol.center {
-                self.bitcoinSymbol.center = self.currencyButtonLocation
-                self.currencyButton.center = self.bitcoinSymbolLocation
+                self.bitcoinSymbol.center = self.currencySymbolLocation
+                self.currencySymbol.center = self.bitcoinSymbolLocation
                 self.bitcoinSymbolLocation = self.bitcoinSymbol.center
-                self.currencyButtonLocation = self.currencyButton.center
+                self.currencySymbolLocation = self.currencySymbol.center
                 
             }
-            
-
-
-
+  
         }
     }
+    
+    @IBAction func reloadTableButton(_ sender: Any) {
+        getData()
+        
+    }
+    
 
 
 

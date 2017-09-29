@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,7 +21,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Utm-8o-mxv">
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="hTQ-X8-Ihm">
                                 <rect key="frame" x="33" y="129" width="310" height="100"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bitcoin" translatesAutoresizingMaskIntoConstraints="NO" id="eZq-it-1YX">
@@ -43,113 +42,281 @@
                                             <action selector="changeSidesButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RzO-uI-sid"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vI4-lh-LLE">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bma-S7-xTk">
                                         <rect key="frame" x="210" y="0.0" width="100" height="100"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="100" id="Cdn-zc-KWH"/>
-                                            <constraint firstAttribute="width" constant="100" id="jgK-yk-edL"/>
+                                            <constraint firstAttribute="width" constant="100" id="GHa-gK-dfB"/>
+                                            <constraint firstAttribute="height" constant="100" id="e5J-I9-UJe"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="110"/>
-                                        <state key="normal" title="$">
-                                            <color key="titleColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="DCa-6a-7oo">
-                                <rect key="frame" x="16" y="279" width="343" height="32"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="oYs-Iz-73D">
-                                        <rect key="frame" x="0.0" y="0.0" width="110" height="32"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BTC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dX5-VV-Dqb">
-                                                <rect key="frame" x="0.0" y="0.0" width="44" height="32"/>
-                                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="23"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0,00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ar-PQ-9Yc">
-                                                <rect key="frame" x="54" y="0.0" width="56" height="32"/>
-                                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="25"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="gOA-5e-gzd">
-                                        <rect key="frame" x="153.5" y="0.0" width="32" height="32"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="32" id="Hdc-r5-GKK"/>
-                                            <constraint firstAttribute="width" constant="32" id="YWA-WB-ngD"/>
-                                        </constraints>
-                                    </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="BkH-cM-6oU">
-                                        <rect key="frame" x="228.5" y="0.0" width="114.5" height="32"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9gl-dU-ZBy">
-                                                <rect key="frame" x="0.0" y="0.0" width="48.5" height="32"/>
-                                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="23"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0,00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qtp-ko-YWS">
-                                                <rect key="frame" x="58.5" y="0.0" width="56" height="32"/>
-                                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="25"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
+                                        <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="115"/>
+                                        <color key="textColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="6j9-42-xvk"/>
+                                    <constraint firstAttribute="height" constant="100" id="G93-fS-SKo"/>
                                 </constraints>
                             </stackView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UTE-7e-Fsi">
-                                <rect key="frame" x="0.0" y="407" width="375" height="260"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="Sb5-x3-Ooy" customClass="ResultsCell" customModule="Bitcoin_" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Sb5-x3-Ooy" id="sp4-nd-4Ce">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 0,00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vTo-Ac-Iqc">
-                                                    <rect key="frame" x="18" y="13" width="339" height="18"/>
-                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
-                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="vTo-Ac-Iqc" firstAttribute="top" secondItem="sp4-nd-4Ce" secondAttribute="topMargin" constant="5" id="5Gs-Ce-Y4A"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="vTo-Ac-Iqc" secondAttribute="bottom" constant="5" id="JRZ-H8-aYt"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="vTo-Ac-Iqc" secondAttribute="trailing" constant="10" id="XlX-XB-Iih"/>
-                                                <constraint firstItem="vTo-Ac-Iqc" firstAttribute="leading" secondItem="sp4-nd-4Ce" secondAttribute="leadingMargin" constant="10" id="n4E-as-ILv"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="bZi-VA-BV7">
+                                <rect key="frame" x="0.0" y="492" width="375" height="175"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d3T-Ky-s7A" customClass="RoundedView" customModule="Bitcoin_" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="25"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="ucM-hv-HHg">
+                                                <rect key="frame" x="8" y="2" width="159" height="20"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 BTC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UAA-bp-McH">
+                                                        <rect key="frame" x="0.0" y="0.0" width="48" height="20"/>
+                                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="oQQ-0L-aLr">
+                                                        <rect key="frame" x="78" y="0.0" width="20" height="20"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="20" id="9fS-MQ-7AM"/>
+                                                            <constraint firstAttribute="height" constant="20" id="VXc-JI-6IW"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BRL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ia6-tn-fkv">
+                                                        <rect key="frame" x="128" y="0.0" width="31" height="20"/>
+                                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="S12-9s-Zqw">
+                                                <rect key="frame" x="267" y="2" width="100" height="20"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XqP-f3-dtB" customClass="RoundedButton" customModule="Bitcoin_" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="20"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="60" id="5mm-gw-ju8"/>
+                                                            <constraint firstAttribute="height" constant="20" id="YRV-C1-E85"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                                        <state key="normal" title="Change">
+                                                            <color key="titleColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="6"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidht">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="igX-ao-mcm" customClass="RoundedButton" customModule="Bitcoin_" customModuleProvider="target">
+                                                        <rect key="frame" x="80" y="0.0" width="20" height="20"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="20" id="4Uv-Xn-ZtW"/>
+                                                            <constraint firstAttribute="width" constant="20" id="4gn-0J-9yB"/>
+                                                        </constraints>
+                                                        <state key="normal" image="reload">
+                                                            <color key="titleColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidht">
+                                                                <real key="value" value="0.0"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="0.0"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="reloadTableButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cvN-EX-J7e"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.97254901960784312" green="0.78823529411764703" blue="0.25098039215686274" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="S12-9s-Zqw" secondAttribute="trailing" constant="8" id="4bv-aU-4oW"/>
+                                            <constraint firstItem="ucM-hv-HHg" firstAttribute="leading" secondItem="d3T-Ky-s7A" secondAttribute="leading" constant="8" id="Eew-5d-1Mb"/>
+                                            <constraint firstAttribute="height" constant="25" id="Pz0-l5-oBP"/>
+                                            <constraint firstAttribute="bottom" secondItem="ucM-hv-HHg" secondAttribute="bottom" constant="3" id="Zsb-Kq-2A7"/>
+                                            <constraint firstItem="ucM-hv-HHg" firstAttribute="top" secondItem="d3T-Ky-s7A" secondAttribute="top" constant="2" id="bhl-wO-nBv"/>
+                                            <constraint firstItem="S12-9s-Zqw" firstAttribute="top" secondItem="d3T-Ky-s7A" secondAttribute="top" constant="2" id="eLV-KE-gxB"/>
+                                            <constraint firstAttribute="bottom" secondItem="S12-9s-Zqw" secondAttribute="bottom" constant="3" id="jZd-jm-RdB"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidht">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Cl-h9-Hvm" customClass="RoundedView" customModule="Bitcoin_" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="25" width="375" height="150"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="asm-lc-3xF">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="01k-zu-fjY" customClass="RoundedView" customModule="Bitcoin_" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pKN-Ja-azd">
+                                                                <rect key="frame" x="8" y="1" width="40" height="18"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="18" id="NKh-QJ-vMZ"/>
+                                                                    <constraint firstAttribute="width" constant="40" id="pzu-5k-djy"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="17"/>
+                                                                <color key="textColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstItem="pKN-Ja-azd" firstAttribute="top" secondItem="01k-zu-fjY" secondAttribute="top" constant="1" id="6FO-Mn-hNK"/>
+                                                            <constraint firstAttribute="bottom" secondItem="pKN-Ja-azd" secondAttribute="bottom" constant="1" id="6xE-CL-tS2"/>
+                                                            <constraint firstItem="pKN-Ja-azd" firstAttribute="leading" secondItem="01k-zu-fjY" secondAttribute="leading" constant="8" id="gh4-P8-wJQ"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="0.0"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 0,00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mza-u8-8N5">
+                                                        <rect key="frame" x="0.0" y="26" width="375" height="20"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4mo-s6-x0q" customClass="RoundedView" customModule="Bitcoin_" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="52" width="375" height="20"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Buy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rc2-FT-Gso">
+                                                                <rect key="frame" x="8" y="1" width="40" height="18"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="40" id="JOn-aL-rmp"/>
+                                                                    <constraint firstAttribute="height" constant="18" id="uKB-7v-lrV"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="17"/>
+                                                                <color key="textColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="bottom" secondItem="rc2-FT-Gso" secondAttribute="bottom" constant="1" id="Wzl-hZ-7Am"/>
+                                                            <constraint firstItem="rc2-FT-Gso" firstAttribute="leading" secondItem="4mo-s6-x0q" secondAttribute="leading" constant="8" id="kyK-KE-H1X"/>
+                                                            <constraint firstItem="rc2-FT-Gso" firstAttribute="top" secondItem="4mo-s6-x0q" secondAttribute="top" constant="1" id="niq-87-V75"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="0.0"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 0,00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yJ3-QP-P3g">
+                                                        <rect key="frame" x="0.0" y="78" width="375" height="20"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UQe-PU-U3R" customClass="RoundedView" customModule="Bitcoin_" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="104" width="375" height="20"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sell" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tNm-v3-3cD">
+                                                                <rect key="frame" x="8" y="1" width="40" height="18"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="18" id="GM7-aN-DnK"/>
+                                                                    <constraint firstAttribute="width" constant="40" id="VhZ-nV-ZtH"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstItem="tNm-v3-3cD" firstAttribute="top" secondItem="UQe-PU-U3R" secondAttribute="top" constant="1" id="hLf-zp-Tlp"/>
+                                                            <constraint firstItem="tNm-v3-3cD" firstAttribute="leading" secondItem="UQe-PU-U3R" secondAttribute="leading" constant="8" id="lBZ-M8-jGn"/>
+                                                            <constraint firstAttribute="bottom" secondItem="tNm-v3-3cD" secondAttribute="bottom" constant="1" id="maH-Uo-0We"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="0.0"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 0,00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ajr-IU-baB">
+                                                        <rect key="frame" x="0.0" y="130" width="375" height="20"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
                                         <color key="backgroundColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
-                                        <connections>
-                                            <outlet property="valueLabel" destination="vTo-Ac-Iqc" id="U75-gt-Z7l"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="rom-W9-HKX"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="pat-F0-jUi"/>
-                                </connections>
-                            </tableView>
+                                        <constraints>
+                                            <constraint firstItem="asm-lc-3xF" firstAttribute="top" secondItem="1Cl-h9-Hvm" secondAttribute="top" id="AWj-Ze-vqy"/>
+                                            <constraint firstAttribute="bottom" secondItem="asm-lc-3xF" secondAttribute="bottom" id="B4Q-pM-tzd"/>
+                                            <constraint firstItem="asm-lc-3xF" firstAttribute="leading" secondItem="1Cl-h9-Hvm" secondAttribute="leading" id="mnW-av-xrf"/>
+                                            <constraint firstAttribute="trailing" secondItem="asm-lc-3xF" secondAttribute="trailing" id="s0S-13-BLd"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="175" id="qdv-l1-VNR"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZlQ-RG-ZrA" customClass="RoundedButton" customModule="Bitcoin_" customModuleProvider="target">
+                                <rect key="frame" x="32" y="313" width="310" height="40"/>
+                                <color key="backgroundColor" red="0.97254901960784312" green="0.78823529411764703" blue="0.25098039215686274" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="2dq-VU-cfo"/>
+                                    <constraint firstAttribute="width" constant="310" id="PPL-pT-oAQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="30"/>
+                                <state key="normal" title="Convert">
+                                    <color key="titleColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidht">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="DCa-6a-7oo" firstAttribute="top" secondItem="Utm-8o-mxv" secondAttribute="bottom" constant="50" id="9nu-Su-EJm"/>
-                            <constraint firstItem="DCa-6a-7oo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="CBb-07-aj0"/>
-                            <constraint firstItem="Utm-8o-mxv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WYy-by-GhW"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="DCa-6a-7oo" secondAttribute="trailing" id="tfg-rA-d4u"/>
-                            <constraint firstItem="Utm-8o-mxv" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="65" id="xEs-vT-dxU"/>
+                            <constraint firstItem="ZlQ-RG-ZrA" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="8Ii-Jy-05V"/>
+                            <constraint firstAttribute="trailing" secondItem="bZi-VA-BV7" secondAttribute="trailing" id="JF5-mR-aas"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="bZi-VA-BV7" secondAttribute="bottom" id="MsK-hj-nyr"/>
+                            <constraint firstItem="hTQ-X8-Ihm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ORv-rg-Acg"/>
+                            <constraint firstItem="ZlQ-RG-ZrA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PDJ-Kt-TwS"/>
+                            <constraint firstItem="hTQ-X8-Ihm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="65" id="Xev-Tm-Jds"/>
+                            <constraint firstItem="bZi-VA-BV7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="m5m-bn-K1h"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Exchange" id="XHA-7U-zB6">
@@ -157,19 +324,18 @@
                         <barButtonItem key="rightBarButtonItem" image="bitcoinGraph" id="rbo-Rs-S7a"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="amountFromLabel" destination="9ar-PQ-9Yc" id="SUp-pP-3DQ"/>
-                        <outlet property="amountToLabel" destination="qtp-ko-YWS" id="E7U-sD-2zz"/>
                         <outlet property="bitcoinSymbol" destination="eZq-it-1YX" id="ozH-tU-Utf"/>
+                        <outlet property="buyLabel" destination="yJ3-QP-P3g" id="6D1-Mj-ZCb"/>
                         <outlet property="changeSidesButton" destination="7Vi-it-U92" id="jUS-lo-q4e"/>
-                        <outlet property="currencyButton" destination="vI4-lh-LLE" id="1QN-2f-aoM"/>
-                        <outlet property="currencyFromLabel" destination="dX5-VV-Dqb" id="1KI-Km-I6Y"/>
-                        <outlet property="currencyToLabel" destination="9gl-dU-ZBy" id="jwd-H4-CoN"/>
-                        <outlet property="tableView" destination="UTE-7e-Fsi" id="Nw0-wn-TWX"/>
+                        <outlet property="currencyChange" destination="ia6-tn-fkv" id="NgM-Q4-HdD"/>
+                        <outlet property="currencySymbol" destination="Bma-S7-xTk" id="59s-DI-S9C"/>
+                        <outlet property="lastLabel" destination="mza-u8-8N5" id="ja5-pQ-Maw"/>
+                        <outlet property="sellLabel" destination="Ajr-IU-baB" id="PBR-CI-k8h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="857" y="114"/>
+            <point key="canvasLocation" x="856.79999999999995" y="113.79310344827587"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="B1h-13-Iqc">
@@ -202,5 +368,6 @@
         <image name="bitcoin" width="256" height="256"/>
         <image name="bitcoinGraph" width="32" height="32"/>
         <image name="exchange" width="256" height="256"/>
+        <image name="reload" width="32" height="32"/>
     </resources>
 </document>
