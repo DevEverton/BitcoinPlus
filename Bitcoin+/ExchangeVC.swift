@@ -13,9 +13,12 @@ class ExchangeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var changeSidesButton: UIButton!
     @IBOutlet weak var bitcoinSymbol: UIImageView!
     @IBOutlet weak var currencyButton: UIButton!
-    @IBOutlet weak var amountLabel: UILabel!
-    @IBOutlet weak var symbolLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var currencyFromLabel: UILabel!
+    @IBOutlet weak var currencyToLabel: UILabel!
+    @IBOutlet weak var amountFromLabel: UILabel!
+    @IBOutlet weak var amountToLabel: UILabel!
+    
     
     
     var bitcoinSymbolLocation: CGPoint!
@@ -35,8 +38,9 @@ class ExchangeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         //self.amountTextField.font = UIFont(name: "Courier New", size: 45)
         bitcoinSymbolLocation = bitcoinSymbol.center
         currencyButtonLocation = currencyButton.center
-        amountLabel.text = "0,00"
         getData()
+        amountFromLabel.text = "1,00"
+        amountToLabel.text = "4.150,45"
 
 
     }
@@ -80,8 +84,7 @@ class ExchangeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-
-    
+ 
     @IBAction func changeSidesButton(_ sender: Any) {
         UIView.animate(withDuration: 0.3) {
             if self.bitcoinSymbolLocation == self.bitcoinSymbol.center {
@@ -91,11 +94,8 @@ class ExchangeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 self.currencyButtonLocation = self.currencyButton.center
                 
             }
-            if self.symbolLabel.text == "฿" {
-                self.symbolLabel.text = "$"
-            }else {
-                self.symbolLabel.text = "฿"
-            }
+            
+
 
 
         }
