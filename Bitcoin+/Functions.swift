@@ -12,7 +12,7 @@ import UIKit
 
 struct Functions {
     
-    static func formatToCurrency(symbol: String, number: String) -> String {
+    static func formatToCurrency(number: String, withSymbol symbol: String) -> String {
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = NumberFormatter.Style.currency
         numberFormatter.currencySymbol = symbol
@@ -22,11 +22,13 @@ struct Functions {
         return number
     }
     
-    static func castToDouble(value: String) -> Double{
-        var value = value
-        value.insert(".", at: value.index(value.endIndex, offsetBy: -2))
-        let valueDbl = Double(value)!
-        return valueDbl
+    static func castToDouble(stringNumber number: String) -> Double?{
+        var number = number
+        number.insert(".", at: number.index(number.endIndex, offsetBy: -2))
+        if let valueDbl = Double(number){
+            return valueDbl
+        }
+        return nil
     }
     
     static func performUIUpdatesOnMain(_ updates: @escaping () -> Void) {

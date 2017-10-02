@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ExchangeVC: UIViewController {
+class ExchangeVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
     @IBOutlet weak var changeSidesButton: UIButton!
     @IBOutlet weak var bitcoinSymbol: UIImageView!
@@ -17,14 +17,16 @@ class ExchangeVC: UIViewController {
     @IBOutlet weak var lastLabel: UILabel!
     @IBOutlet weak var buyLabel: UILabel!
     @IBOutlet weak var sellLabel: UILabel!
+    @IBOutlet weak var textFieldCurrency: UITextField!
 
-    
+    var picker = UIPickerView()
     
     
     var bitcoinSymbolLocation: CGPoint!
     var currencySymbolLocation: CGPoint!
     
     var bitcoinData = [Bitcoin]()
+    var currentCurrency = "USD"
     
 
     override func viewDidLoad() {
@@ -34,11 +36,36 @@ class ExchangeVC: UIViewController {
             print(results)
 
         }
+//        picker.delegate = self
+//        picker.dataSource = self
+        
+        
+        picker = UIPickerView(frame: CGRect(x: 0, y: 200, width: view.frame.width, height: 300))
+        picker.backgroundColor = .white
+        
+        picker.showsSelectionIndicator = true
+        picker.delegate = self
+        picker.dataSource = self
+        
+        let toolBar = UIToolbar()
+        toolBar.barStyle = UIBarStyle.default
+        toolBar.isTranslucent = true
+        toolBar.tintColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
+        toolBar.sizeToFit()
+        
+        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.plain, target: self, action: Selector(("donePicker")))
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.plain, target: self, action: Selector(("donePicker")))
+        
+        toolBar.setItems([cancelButton, spaceButton, doneButton], animated: false)
+        toolBar.isUserInteractionEnabled = true
+        textFieldCurrency.inputView = picker
+
         self.navigationItem.titleView = UIImageView(image: UIImage(named: "bitcoinIcon"))
         //self.amountTextField.font = UIFont(name: "Courier New", size: 45)
         bitcoinSymbolLocation = bitcoinSymbol.center
         currencySymbolLocation = currencySymbol.center
-        getData()
+        getData(of: "USD")
 
 
 
@@ -69,17 +96,17 @@ class ExchangeVC: UIViewController {
     
     
     
-    func getData() {
+    func getData(of currency: String) {
         
-        Bitcoin.bitcoinPrice(currency: "BRL") { (results:[Bitcoin]?) in
+        Bitcoin.bitcoinPrice(currency: currency) { (results:[Bitcoin]?) in
             if let bitcoinResults = results {
                 self.bitcoinData = bitcoinResults
                 Functions.performUIUpdatesOnMain {
                   //  self.tableView.reloadData()
                     let bitcoinObject = self.bitcoinData[0]
-                    self.lastLabel.text = Functions.formatToCurrency(symbol: bitcoinObject.symbol, number: String(bitcoinObject.last))
-                    self.buyLabel.text = Functions.formatToCurrency(symbol: bitcoinObject.symbol, number: String(bitcoinObject.buy))
-                    self.sellLabel.text = Functions.formatToCurrency(symbol: bitcoinObject.symbol, number: String(bitcoinObject.sell))
+                    self.lastLabel.text = Functions.formatToCurrency(number: String(bitcoinObject.last), withSymbol: bitcoinObject.symbol + " ")
+                    self.buyLabel.text = Functions.formatToCurrency(number: String(bitcoinObject.buy), withSymbol: bitcoinObject.symbol + " ")
+                    self.sellLabel.text = Functions.formatToCurrency(number: String(bitcoinObject.sell), withSymbol: bitcoinObject.symbol + " ")
                 }
             }
         }
@@ -100,9 +127,38 @@ class ExchangeVC: UIViewController {
     }
     
     @IBAction func reloadTableButton(_ sender: Any) {
-        getData()
+        getData(of: currentCurrency)
         
     }
+    
+    
+
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return Constants.currencyArr.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return Constants.currencyArr[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        currencyChange.text = Constants.currencyArr[row]
+        getData(of: Constants.currencyArr[row])
+        currentCurrency = Constants.currencyArr[row]
+        self.view.endEditing(false)
+        
+    }
+    
     
 
 

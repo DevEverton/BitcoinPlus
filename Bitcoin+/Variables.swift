@@ -15,4 +15,5 @@ struct Variables {
     static var currentCurrency = String()
     
     
+    
 }
