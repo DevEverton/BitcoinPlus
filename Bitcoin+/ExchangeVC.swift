@@ -26,7 +26,8 @@ class ExchangeVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate
     var currencySymbolLocation: CGPoint!
     
     var bitcoinData = [Bitcoin]()
-    var currentCurrency = "USD"
+   // var currentCurrency = "USD"
+    
     
 
     override func viewDidLoad() {
@@ -36,73 +37,29 @@ class ExchangeVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate
             print(results)
 
         }
-//        picker.delegate = self
-//        picker.dataSource = self
-        
         
         picker = UIPickerView(frame: CGRect(x: 0, y: 200, width: view.frame.width, height: 300))
-        picker.backgroundColor = .white
-        
+        picker.backgroundColor = UIColor(red:0.30, green:0.30, blue:0.30, alpha:1.0)
         picker.showsSelectionIndicator = true
         picker.delegate = self
         picker.dataSource = self
-        
-        let toolBar = UIToolbar()
-        toolBar.barStyle = UIBarStyle.default
-        toolBar.isTranslucent = true
-        toolBar.tintColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
-        toolBar.sizeToFit()
-        
-        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.plain, target: self, action: Selector(("donePicker")))
-        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
-        let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.plain, target: self, action: Selector(("donePicker")))
-        
-        toolBar.setItems([cancelButton, spaceButton, doneButton], animated: false)
-        toolBar.isUserInteractionEnabled = true
         textFieldCurrency.inputView = picker
 
-        self.navigationItem.titleView = UIImageView(image: UIImage(named: "bitcoinIcon"))
-        //self.amountTextField.font = UIFont(name: "Courier New", size: 45)
+        self.navigationItem.titleView = UIImageView(image: UIImage(named: "logo"))
         bitcoinSymbolLocation = bitcoinSymbol.center
         currencySymbolLocation = currencySymbol.center
-        getData(of: "USD")
-
-
+        Variables.currentCurrency = "USD"
+        getData(of: Variables.currentCurrency)
 
     }
-    
-//    func numberOfSections(in tableView: UITableView) -> Int {
-//        return bitcoinData.count
-//    }
-//    
-//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        return "Last"
-//    }
-//    
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return 1
-//    }
-//    
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ResultsCell
-// 
-//        let bitcoinObject = bitcoinData[indexPath.section]
-//        cell.valueLabel.text = "Last: " + Functions.formatToCurrency(symbol: bitcoinObject.symbol, number: String(bitcoinObject.last))
-//        
-//        return cell
-//        
-//    }
-    
-    
-    
+
+
     func getData(of currency: String) {
         
         Bitcoin.bitcoinPrice(currency: currency) { (results:[Bitcoin]?) in
             if let bitcoinResults = results {
                 self.bitcoinData = bitcoinResults
                 Functions.performUIUpdatesOnMain {
-                  //  self.tableView.reloadData()
                     let bitcoinObject = self.bitcoinData[0]
                     self.lastLabel.text = Functions.formatToCurrency(number: String(bitcoinObject.last), withSymbol: bitcoinObject.symbol + " ")
                     self.buyLabel.text = Functions.formatToCurrency(number: String(bitcoinObject.buy), withSymbol: bitcoinObject.symbol + " ")
@@ -127,7 +84,7 @@ class ExchangeVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate
     }
     
     @IBAction func reloadTableButton(_ sender: Any) {
-        getData(of: currentCurrency)
+        getData(of: Variables.currentCurrency)
         
     }
     
@@ -154,7 +111,7 @@ class ExchangeVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         currencyChange.text = Constants.currencyArr[row]
         getData(of: Constants.currencyArr[row])
-        currentCurrency = Constants.currencyArr[row]
+        Variables.currentCurrency = Constants.currencyArr[row]
         self.view.endEditing(false)
         
     }

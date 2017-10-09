@@ -22,6 +22,17 @@ struct Functions {
         return number
     }
     
+    static func formatter(number: String) -> String{
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = NumberFormatter.Style.currency
+        numberFormatter.currencySymbol = ""
+        if let number2 = Double(number){
+            return numberFormatter.string(from: NSNumber(value: number2))!
+        }
+        return number
+        
+    }
+    
     static func castToDouble(stringNumber number: String) -> Double?{
         var number = number
         number.insert(".", at: number.index(number.endIndex, offsetBy: -2))

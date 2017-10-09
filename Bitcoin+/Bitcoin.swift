@@ -50,8 +50,8 @@ struct Bitcoin {
                 
                 do{
                     if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String:Any]{
-                        if let brl = json[currency] as? [String:Any] {
-                            if let bitcoinObj = try? Bitcoin(json: brl){
+                        if let currency = json[currency] as? [String:Any] {
+                            if let bitcoinObj = try? Bitcoin(json: currency){
                                 
                                 bitcoinArray = [bitcoinObj]
                                 
