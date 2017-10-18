@@ -15,16 +15,24 @@ class CalculatorVC: UIViewController {
     @IBOutlet weak var typedNumberTop: UILabel!
     @IBOutlet weak var resultNumberBottom: UILabel!
     
+    var bitcoinData = [Bitcoin]()
+    var lastValue = Double()
     
+    //IMPLEMENT THE LOGIC FOR CHANGE SIDES OF THE CONVERSOR
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        Variables.calcTopCurrency = Constants.BTC
+        currencyLabelTop.text = Variables.calcTopCurrency
+        currencyLabelBottom.text = Variables.currentCurrency
 
     }
     
     override func viewDidAppear(_ animated: Bool) {
         typedNumberTop.text = "0,00"
         Variables.typedValue = "000"
+        getLastValue(of: Variables.currentCurrency)
+
     }
     
     
@@ -53,14 +61,45 @@ class CalculatorVC: UIViewController {
         typedNumberTop.text = tempStr
         let tempStr2 = tempStr.replacingOccurrences(of: "[,.]", with: "",options: .regularExpression)
         Variables.typedValue = tempStr2
+       // resultNumberBottom.text = "0,00"
+        let convertedValue = Functions.castToDouble(stringNumber: Variables.typedValue)!
+        resultNumberBottom.text = Functions.formatter(number: String(Calculate(convertedValue, topNumber: .bitcoin)))
         
     }
     
     @IBAction func equalsButton(_ sender: Any) {
         
-        let valueToConvert = Functions.castToDouble(stringNumber: Variables.typedValue)!
+        let convertedValue = Functions.castToDouble(stringNumber: Variables.typedValue)!
+        resultNumberBottom.text = Functions.formatter(number: String(Calculate(convertedValue, topNumber: .bitcoin)))
         
+    }
+    
+    func Calculate(_ amount: Double,topNumber: topCalculatorNumber) -> Double {
+        var result = Double()
+        switch topNumber {
+        case .bitcoin:
+            result = amount * lastValue
+        case .currency:
+            result = amount / lastValue
+            
+        }
+         return result
         
+    }
+    
+    func getLastValue(of currency: String){
+        Bitcoin.bitcoinPrice(currency: currency) { (results:[Bitcoin]?) in
+            if let bitcoinResults = results {
+                self.bitcoinData = bitcoinResults
+                Functions.performUIUpdatesOnMain {
+                    let bitcoinObject = self.bitcoinData[0]
+                    self.lastValue = bitcoinObject.last
+
+                }
+
+            }
+
+        }
     }
     
 

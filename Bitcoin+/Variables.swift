@@ -13,7 +13,6 @@ struct Variables {
     
     static var typedValue = String()
     static var currentCurrency = String()
-    
-    
-    
+    static var calcTopCurrency = String()
+    static var calcBottomCurrency = String()
 }

@@ -13,6 +13,13 @@ struct Constants {
     
     static let currencyArr = ["USD", "AUD", "BRL", "CAD", "CHF", "CLP", "CNY", "DKK", "EUR", "GBP",
                             "HKD", "INR", "ISK", "JPY", "KRW", "NZD", "PLN", "RUB", "SEK", "SGD", "THB", "TWD"]
+    static let BTC = "BTC"
+
+}
+
+enum topCalculatorNumber {
     
+    case currency
+    case bitcoin
     
 }

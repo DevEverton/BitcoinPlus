@@ -33,6 +33,8 @@ struct Functions {
         
     }
     
+
+    
     static func castToDouble(stringNumber number: String) -> Double?{
         var number = number
         number.insert(".", at: number.index(number.endIndex, offsetBy: -2))

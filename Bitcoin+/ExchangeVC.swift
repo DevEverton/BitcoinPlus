@@ -26,7 +26,6 @@ class ExchangeVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate
     var currencySymbolLocation: CGPoint!
     
     var bitcoinData = [Bitcoin]()
-   // var currentCurrency = "USD"
     
     
 
@@ -87,8 +86,6 @@ class ExchangeVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate
         getData(of: Variables.currentCurrency)
         
     }
-    
-    
 
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -116,9 +113,6 @@ class ExchangeVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate
         
     }
     
-    
-
-
 
 
 }
