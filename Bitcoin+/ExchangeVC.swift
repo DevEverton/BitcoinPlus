@@ -49,7 +49,30 @@ class ExchangeVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate
         currencySymbolLocation = currencySymbol.center
         Variables.currentCurrency = "USD"
         getData(of: Variables.currentCurrency)
+        
+ 
 
+    }
+    
+    //Get the position of the bitcoinSymbol and currencySymbol in the animation
+    func getPositionOfSymbols(){
+        if bitcoinSymbol.center.x < view.center.x {
+            BitcoinSide.isLeft = true
+            BitcoinSide.isRight = false
+            CurrencySide.isLeft = false
+            CurrencySide.isRight = true
+            
+        }else{
+            BitcoinSide.isLeft = false
+            BitcoinSide.isRight = true
+            CurrencySide.isLeft = true
+            CurrencySide.isRight = false
+            
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        getPositionOfSymbols()
     }
 
 
@@ -80,6 +103,7 @@ class ExchangeVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate
             }
   
         }
+        getPositionOfSymbols()
     }
     
     @IBAction func reloadTableButton(_ sender: Any) {

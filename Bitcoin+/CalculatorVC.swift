@@ -36,7 +36,6 @@ class CalculatorVC: UIViewController {
     }
     
     
-    
     @IBAction func numberButton(_ sender: Any) {
         
         Variables.typedValue += (sender as AnyObject).title(for: .normal)!

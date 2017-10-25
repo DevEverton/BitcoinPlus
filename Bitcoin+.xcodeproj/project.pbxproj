@@ -22,6 +22,7 @@
 		50C37F631F7ED052005D9A24 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C37F621F7ED052005D9A24 /* RoundedView.swift */; };
 		50C37F651F7ED08F005D9A24 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C37F641F7ED08F005D9A24 /* RoundedButton.swift */; };
 		50C37F961F8288B9005D9A24 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C37F951F8288B9005D9A24 /* Constants.swift */; };
+		50D955D31FA10DC200002F4D /* Side.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D955D21FA10DC200002F4D /* Side.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		50C37F621F7ED052005D9A24 /* RoundedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
 		50C37F641F7ED08F005D9A24 /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		50C37F951F8288B9005D9A24 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		50D955D21FA10DC200002F4D /* Side.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Side.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 				50C37F5A1F7C475C005D9A24 /* Variables.swift */,
 				50C37F5C1F7C47EA005D9A24 /* Functions.swift */,
 				50C37F951F8288B9005D9A24 /* Constants.swift */,
+				50D955D21FA10DC200002F4D /* Side.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 				50C37F541F7C058D005D9A24 /* Bitcoin.swift in Sources */,
 				50C37F351F7C04C3005D9A24 /* Bitcoin_.xcdatamodeld in Sources */,
 				50C37F2D1F7C04C3005D9A24 /* AppDelegate.swift in Sources */,
+				50D955D31FA10DC200002F4D /* Side.swift in Sources */,
 				50C37F651F7ED08F005D9A24 /* RoundedButton.swift in Sources */,
 				50C37F961F8288B9005D9A24 /* Constants.swift in Sources */,
 				50C37F581F7C07A7005D9A24 /* ExchangeVC.swift in Sources */,
