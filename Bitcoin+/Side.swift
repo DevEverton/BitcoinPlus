@@ -12,16 +12,12 @@ import UIKit
 
 
 struct BitcoinSide {
-    
     static var isLeft = Bool()
-    static var isRight = Bool()
     
 }
 
 struct CurrencySide {
-    
     static var isLeft = Bool()
-    static var isRight = Bool()
     
 }
 

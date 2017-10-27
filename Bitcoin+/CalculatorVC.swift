@@ -25,6 +25,14 @@ class CalculatorVC: UIViewController {
         Variables.calcTopCurrency = Constants.BTC
         currencyLabelTop.text = Variables.calcTopCurrency
         currencyLabelBottom.text = Variables.currentCurrency
+        
+        if BitcoinSide.isLeft == false {
+            currencyLabelTop.text = Variables.currentCurrency
+            currencyLabelBottom.text = "BTC"
+        }else {
+            currencyLabelTop.text = "BTC"
+            currencyLabelBottom.text = Variables.currentCurrency
+        }
 
     }
     
@@ -60,17 +68,28 @@ class CalculatorVC: UIViewController {
         typedNumberTop.text = tempStr
         let tempStr2 = tempStr.replacingOccurrences(of: "[,.]", with: "",options: .regularExpression)
         Variables.typedValue = tempStr2
-       // resultNumberBottom.text = "0,00"
-        let convertedValue = Functions.castToDouble(stringNumber: Variables.typedValue)!
-        resultNumberBottom.text = Functions.formatter(number: String(Calculate(convertedValue, topNumber: .bitcoin)))
+        
+        
+        if BitcoinSide.isLeft == true {
+            let convertedValue = Functions.castToDouble(stringNumber: Variables.typedValue)!
+            resultNumberBottom.text = Functions.formatter(number: String(Calculate(convertedValue, topNumber: .bitcoin)))
+        } else{
+            let convertedValue = Functions.castToDouble(stringNumber: Variables.typedValue)!
+            resultNumberBottom.text = Functions.formatter(number: String(Calculate(convertedValue, topNumber: .currency)))
+        }
         
     }
     
     @IBAction func equalsButton(_ sender: Any) {
         
-        let convertedValue = Functions.castToDouble(stringNumber: Variables.typedValue)!
-        resultNumberBottom.text = Functions.formatter(number: String(Calculate(convertedValue, topNumber: .bitcoin)))
-        
+        if BitcoinSide.isLeft == true {
+            let convertedValue = Functions.castToDouble(stringNumber: Variables.typedValue)!
+            resultNumberBottom.text = Functions.formatter(number: String(Calculate(convertedValue, topNumber: .bitcoin)))
+        } else{
+            let convertedValue = Functions.castToDouble(stringNumber: Variables.typedValue)!
+            resultNumberBottom.text = Functions.formatter(number: String(Calculate(convertedValue, topNumber: .currency)))
+        }
+
     }
     
     func Calculate(_ amount: Double,topNumber: topCalculatorNumber) -> Double {

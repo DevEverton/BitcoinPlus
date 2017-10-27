@@ -32,10 +32,10 @@ class ExchangeVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        Bitcoin.bitcoinPrice(currency: "USD") { (results: [Bitcoin]) in
-            print(results)
-
-        }
+//        Bitcoin.bitcoinPrice(currency: "USD") { (results: [Bitcoin]) in
+//            print(results)
+//
+//        }
         
         picker = UIPickerView(frame: CGRect(x: 0, y: 200, width: view.frame.width, height: 300))
         picker.backgroundColor = UIColor(red:0.30, green:0.30, blue:0.30, alpha:1.0)
@@ -58,15 +58,11 @@ class ExchangeVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate
     func getPositionOfSymbols(){
         if bitcoinSymbol.center.x < view.center.x {
             BitcoinSide.isLeft = true
-            BitcoinSide.isRight = false
             CurrencySide.isLeft = false
-            CurrencySide.isRight = true
             
         }else{
             BitcoinSide.isLeft = false
-            BitcoinSide.isRight = true
             CurrencySide.isLeft = true
-            CurrencySide.isRight = false
             
         }
     }
