@@ -38,7 +38,7 @@ class ExchangeVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate
 //        }
         
         picker = UIPickerView(frame: CGRect(x: 0, y: 200, width: view.frame.width, height: 300))
-        picker.backgroundColor = UIColor(red:0.30, green:0.30, blue:0.30, alpha:1.0)
+        picker.backgroundColor = UIColor(red:0.40, green:0.40, blue:0.40, alpha:1.0)
         picker.showsSelectionIndicator = true
         picker.delegate = self
         picker.dataSource = self
@@ -118,21 +118,39 @@ class ExchangeVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return Constants.currencyArr.count
+        return Constants.countriesCurrency.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return Constants.currencyArr[row]
+        return Constants.countriesCurrency[row]
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        currencyChange.text = Constants.currencyArr[row]
-        getData(of: Constants.currencyArr[row])
-        Variables.currentCurrency = Constants.currencyArr[row]
+        
+        for countryCurrency in Constants.countriesCurrency{
+            if countryCurrency == Constants.countriesCurrency[row]{
+                let key = Constants.countriesCurrencyDict[countryCurrency]
+                getData(of: key!)
+                currencyChange.text = key!
+                Variables.currentCurrency = key!
+
+            }
+        }
         self.view.endEditing(false)
         
     }
     
 
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
