@@ -18,6 +18,8 @@ class ExchangeVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate
     @IBOutlet weak var buyLabel: UILabel!
     @IBOutlet weak var sellLabel: UILabel!
     @IBOutlet weak var textFieldCurrency: UITextField!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var refreshButtonOut: RoundedButton!
 
     var picker = UIPickerView()
     
@@ -74,6 +76,7 @@ class ExchangeVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate
 
     func getData(of currency: String) {
         
+        toggleRefreshAnimation(on: true)
         Bitcoin.bitcoinPrice(currency: currency) { (results:[Bitcoin]?) in
             if let bitcoinResults = results {
                 self.bitcoinData = bitcoinResults
@@ -82,6 +85,7 @@ class ExchangeVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate
                     self.lastLabel.text = Functions.formatToCurrency(number: String(bitcoinObject.last), withSymbol: bitcoinObject.symbol + " ")
                     self.buyLabel.text = Functions.formatToCurrency(number: String(bitcoinObject.buy), withSymbol: bitcoinObject.symbol + " ")
                     self.sellLabel.text = Functions.formatToCurrency(number: String(bitcoinObject.sell), withSymbol: bitcoinObject.symbol + " ")
+                    self.toggleRefreshAnimation(on: false)
                 }
             }
         }
@@ -104,6 +108,17 @@ class ExchangeVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate
     
     @IBAction func reloadTableButton(_ sender: Any) {
         getData(of: Variables.currentCurrency)
+        
+    }
+    
+    func toggleRefreshAnimation(on: Bool){
+        refreshButtonOut.isHidden = on
+        
+        if on{
+            activityIndicator.startAnimating()
+        } else{
+            activityIndicator.stopAnimating()
+        }
         
     }
 

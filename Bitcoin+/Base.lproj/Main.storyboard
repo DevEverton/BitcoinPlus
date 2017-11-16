@@ -25,7 +25,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="HOU-Ej-SvP">
                                 <rect key="frame" x="26" y="104" width="323" height="180"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="hTQ-X8-Ihm">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hTQ-X8-Ihm">
                                         <rect key="frame" x="0.0" y="0.0" width="323" height="100"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bitcoin" translatesAutoresizingMaskIntoConstraints="NO" id="eZq-it-1YX">
@@ -153,6 +153,9 @@
                                                             <action selector="reloadTableButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cvN-EX-J7e"/>
                                                         </connections>
                                                     </button>
+                                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="x2g-Yv-pRy">
+                                                        <rect key="frame" x="347" y="5" width="20" height="20"/>
+                                                    </activityIndicatorView>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.97254901960784312" green="0.78823529411764703" blue="0.25098039215686274" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
@@ -160,11 +163,14 @@
                                                     <constraint firstItem="ucM-hv-HHg" firstAttribute="leading" secondItem="d3T-Ky-s7A" secondAttribute="leading" constant="8" id="1rB-1I-4NA"/>
                                                     <constraint firstAttribute="height" constant="30" id="68I-9W-hwX"/>
                                                     <constraint firstAttribute="bottom" secondItem="FuS-MZ-Hs8" secondAttribute="bottom" id="7PQ-U3-arw"/>
+                                                    <constraint firstItem="x2g-Yv-pRy" firstAttribute="top" secondItem="d3T-Ky-s7A" secondAttribute="top" constant="5" id="IMS-Ph-wUt"/>
                                                     <constraint firstItem="FuS-MZ-Hs8" firstAttribute="top" secondItem="d3T-Ky-s7A" secondAttribute="top" id="Q7c-je-hMs"/>
                                                     <constraint firstAttribute="bottom" secondItem="ucM-hv-HHg" secondAttribute="bottom" constant="5" id="UfF-Us-BYp"/>
                                                     <constraint firstItem="FuS-MZ-Hs8" firstAttribute="leading" secondItem="d3T-Ky-s7A" secondAttribute="leading" constant="8" id="Zym-Zm-Aev"/>
                                                     <constraint firstAttribute="trailing" secondItem="igX-ao-mcm" secondAttribute="trailing" constant="8" id="lKQ-dd-3hb"/>
                                                     <constraint firstItem="ucM-hv-HHg" firstAttribute="top" secondItem="d3T-Ky-s7A" secondAttribute="top" constant="5" id="old-V9-kWO"/>
+                                                    <constraint firstAttribute="trailing" secondItem="x2g-Yv-pRy" secondAttribute="trailing" constant="8" id="sgc-Pj-JCA"/>
+                                                    <constraint firstAttribute="bottom" secondItem="x2g-Yv-pRy" secondAttribute="bottom" constant="5" id="zeQ-7V-2cP"/>
                                                     <constraint firstAttribute="bottom" secondItem="igX-ao-mcm" secondAttribute="bottom" constant="5" id="zju-Ib-PWM"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
@@ -303,12 +309,14 @@
                     </view>
                     <navigationItem key="navigationItem" title="Main" id="XHA-7U-zB6"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="x2g-Yv-pRy" id="oIC-f6-aVo"/>
                         <outlet property="bitcoinSymbol" destination="eZq-it-1YX" id="ozH-tU-Utf"/>
                         <outlet property="buyLabel" destination="yJ3-QP-P3g" id="6D1-Mj-ZCb"/>
                         <outlet property="changeSidesButton" destination="7Vi-it-U92" id="jUS-lo-q4e"/>
                         <outlet property="currencyChange" destination="ia6-tn-fkv" id="NgM-Q4-HdD"/>
                         <outlet property="currencySymbol" destination="Bma-S7-xTk" id="59s-DI-S9C"/>
                         <outlet property="lastLabel" destination="mza-u8-8N5" id="ja5-pQ-Maw"/>
+                        <outlet property="refreshButtonOut" destination="igX-ao-mcm" id="0wc-oC-Ops"/>
                         <outlet property="sellLabel" destination="Ajr-IU-baB" id="PBR-CI-k8h"/>
                         <outlet property="textFieldCurrency" destination="FuS-MZ-Hs8" id="wx7-O4-fr2"/>
                     </connections>
